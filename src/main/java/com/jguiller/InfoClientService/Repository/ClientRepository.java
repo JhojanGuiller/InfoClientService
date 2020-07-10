@@ -7,5 +7,7 @@ import com.jguiller.InfoClientService.Model.Client;
 
 @Repository
 public interface ClientRepository extends MongoRepository<Client, Integer>{
+	
+	Client findByDni(String dni);
 
 }

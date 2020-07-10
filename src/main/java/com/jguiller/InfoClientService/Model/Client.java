@@ -17,8 +17,10 @@ public class Client {
 	
 	private String nombre;
 	private String apellido;
-	private String DNI;
-	private String TipoCliente;
+	private String dni;
+	private String tipoCliente;
+	
+	public Client() {	}
 	
 	public int getId() {
 		return id;
@@ -38,16 +40,26 @@ public class Client {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getDNI() {
-		return DNI;
+	public String getDni() {
+		return dni;
 	}
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 	public String getTipoCliente() {
-		return TipoCliente;
+		return tipoCliente;
 	}
 	public void setTipoCliente(String tipoCliente) {
-		TipoCliente = tipoCliente;
+		this.tipoCliente = tipoCliente;
 	}
+	
+	public Client(int id, String nombre, String apellido, String dni, String tipoCliente) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.tipoCliente = tipoCliente;
+	}
+	
 }

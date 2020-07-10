@@ -1,12 +1,14 @@
 client-mongo:
  image: mongo:latest
+ restart: always
  container_name: "client-mongodb"
  ports:
-  - 27017:27017
+  - "27017:27017"
 infoclientservice:
- image: infoclientservice:1.0
+ build: .
+ dockerfile: Dockerfile
  container_name: infoclientservice
  ports:
-  - 8085:8080
+  - "8085:8080"
  links:
  - client-mongo

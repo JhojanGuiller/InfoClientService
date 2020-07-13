@@ -13,8 +13,8 @@ public class Client {
 	@Id
 	@NotNull
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
-	
+	private int idCliente;
+
 	private String nombre;
 	private String apellido;
 	private String dni;
@@ -22,11 +22,11 @@ public class Client {
 	
 	public Client() {	}
 	
-	public int getId() {
-		return id;
+	public int getIdCliente() {
+		return idCliente;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
 	}
 	public String getNombre() {
 		return nombre;
@@ -53,9 +53,9 @@ public class Client {
 		this.tipoCliente = tipoCliente;
 	}
 	
-	public Client(int id, String nombre, String apellido, String dni, String tipoCliente) {
+	public Client(int idCliente, String nombre, String apellido, String dni, String tipoCliente) {
 		super();
-		this.id = id;
+		this.idCliente = idCliente;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;

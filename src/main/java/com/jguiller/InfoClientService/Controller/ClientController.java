@@ -23,7 +23,7 @@ public class ClientController {
 	@PostMapping("/addClient")
 	public String saveClient(@RequestBody Client cli) {
 		cliRepository.save(cli);
-		return "Client add successfully: " + cli.getId();
+		return "Client add successfully: " + cli.getIdCliente();
 	}
 	
 	@GetMapping("/findAllClients")
@@ -31,9 +31,9 @@ public class ClientController {
 		return cliRepository.findAll();
 	}
 	
-	@GetMapping("/findClient/{id}")
-	public Optional<Client> getClient(@PathVariable int id){
-		return cliRepository.findById(id);
+	@GetMapping("/findClient/{idCliente}")
+	public Optional<Client> getClient(@PathVariable int idCliente){
+		return cliRepository.findByIdCliente(idCliente);
 	}
 	
 	@GetMapping("/client")
@@ -41,9 +41,9 @@ public class ClientController {
 		return cliRepository.findByDni(dni);
 	}
 	
-	@GetMapping("deleteClient/{id}")
-	public String deleteClient(@PathVariable int id) {
-		cliRepository.deleteById(id);
-		return "Deleted Client Successfully: " + id;
+	@GetMapping("/deleteClient/{idCliente}")
+	public String deleteClient(@PathVariable int idCliente) {
+		cliRepository.deleteByIdCliente(idCliente);
+		return "Deleted Client Successfully: " + idCliente;
 	}
 }

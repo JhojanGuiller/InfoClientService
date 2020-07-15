@@ -1,7 +1,7 @@
-client-mongo:
+clientdb:
  image: mongo:latest
  restart: always
- container_name: "client-mongodb"
+ container_name: "clientdb"
  ports:
   - "27017:27017"
 infoclientservice:
@@ -11,4 +11,4 @@ infoclientservice:
  ports:
   - "8085:8080"
  links:
- - client-mongo
+ - clientdb

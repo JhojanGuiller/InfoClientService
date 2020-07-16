@@ -2,8 +2,8 @@ package com.jguiller.InfoClientService.Model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.sun.istack.NotNull;

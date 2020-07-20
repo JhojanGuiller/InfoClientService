@@ -1,7 +1,6 @@
 package com.jguiller.InfoClientService.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,13 +37,13 @@ public class ClientController {
 
 	// OBTENER UN CLIENTE POR SU ID
 	@GetMapping("/{idCliente}")
-	public Mono<ResponseEntity<Client>> getClienteById(@PathVariable(value = "idCliente") int id) {
+	public Mono<Client> getClienteById(@PathVariable(value = "idCliente") int id) {
 		return clientService.getClientById(id);
 	}
 
 	// EDITAR UN CLIENTE POR SU ID
 	@PutMapping("/updateClient/{idCliente}")
-	public Mono<ResponseEntity<Client>> updateCliente(@RequestBody Client client, @PathVariable (value = "idCliente") int id){
+	public Mono<Client> updateCliente(@RequestBody Client client, @PathVariable (value = "idCliente") int id){
 		return clientService.updateClient(client, id);
 	}
 	

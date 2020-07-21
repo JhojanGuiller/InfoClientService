@@ -13,7 +13,7 @@ import com.jguiller.InfoClientService.Service.ClientService;
 
 import reactor.core.publisher.Mono;
 
-@WebFluxTest()
+@WebFluxTest
 public class ClientControllerTest {
 	
 	@Autowired

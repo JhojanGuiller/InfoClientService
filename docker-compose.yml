@@ -4,6 +4,8 @@ clientdb:
  container_name: "clientdb"
  ports:
   - "27017:27017"
+ volumes:
+  - ./Document_InfoClient.js:/docker-entrypoint-initdb.d/Document_InfoClient.js:ro
 infoclientservice:
  build: .
  dockerfile: Dockerfile

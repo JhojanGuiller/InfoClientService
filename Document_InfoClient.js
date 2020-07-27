@@ -1,6 +1,6 @@
 conn = new Mongo();
 
-db = conn.getDB("ClientService");
+db = conn.getDB("BankMicroServices");
 
 var clients =
       [

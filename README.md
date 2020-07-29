@@ -1,20 +1,22 @@
 # MICROSERVICE CLIENT
 Este microservicio muestra los clientes de un banco.
 
-## INSTALACION
-Descargar docker de https://www.docker.com/get-started
+#INSTALACION
+Este microservicio es parte de una infraestructura de microservicios y requiere la ejecucion de otro app para su funcionamiento
 
-Abrir una consola de comandos y ejecutar el siguiente comando para descargar una imagen Mongo
-- docker pull mongo
+Primero se debe descargar los siguiente repositorios
+1. https://github.com/JhojanGuiller/BankApiGateway
+2. https://github.com/JhojanGuiller/ConfigServer
+3. https://github.com/JhojanGuiller/EurekaBankService
+4. Actual repositorio
 
-Clonar este repositorio en una carpeta local
+Ejecutarlos en el mismo orden que se descarga
 
-En la consola de comando ingresar a la carpeta donde se descargo este repositorio
-- cd <ruta>/InfoClientService
-- docker-compose up --build -d
-
-Verificar si los container se levantaron con exito
-- docker ps
+##EJECUTAR LISTA DE CLIENTE PRECARGADOS
+- Asegurarse que el servicio mongodb este corriendo
+- Ejecutar el mongo bash
+- Ingresar el siguiente comando
+ - load("<ruta>/InfoClientService/Document_InfoClient.js")
 
 ## ESTRUCTURA DEL PRODUCTO
 {
@@ -26,21 +28,4 @@ Verificar si los container se levantaron con exito
 }
 
 ## RUTAS
-El container del microservicio esta corriendo en el puerto 8085
-
-Las rutas son las siguientes:
-
-- Obtener todos los clientes [Metodo GET]
-  - http://localhost:8085/clients
-
-- Obtener un cliente por id [Metodo GET]
-  - http://localhost:8085/clients/<id>
-
-- Agregar un cliente nuevo [Metodo POST]
-  - http://localhost:8085/clients/addClient
-
-- Actualizar un cliente [Metodo PUT]
-  - http://localhost:8085/clients/updateClient/<id>
-
-- Eliminar un cliente [Metodo DELETE]
-  - http://localhost:8085/clients/deleteClient/<id>
+Revisar el repositorio https://github.com/JhojanGuiller/BankApiGateway
